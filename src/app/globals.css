@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-size: 16px;
+    --font-jakarta: "Plus Jakarta Sans Variable";
+    --font-fraunces: "Fraunces Variable";
+    --font-lora: "Lora Variable";
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #FAFAF7;
+    color: #1A1B18;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #2D5A3D;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           font-sans font-semibold transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn
+           bg-acc text-white rounded-btn
+           px-5 py-2.5 text-sm min-h-[40px]
+           shadow-btn hover:brightness-110 active:brightness-90;
+  }
+
+  .btn-primary-sm {
+    @apply btn
+           bg-acc text-white rounded-btn
+           px-3.5 py-[7px] text-[13px] min-h-[34px]
+           shadow-btn hover:brightness-110;
+  }
+
+  .btn-secondary {
+    @apply btn
+           bg-white text-text rounded-btn
+           px-5 py-2.5 text-sm min-h-[40px]
+           border border-[1.5px] border-border
+           hover:bg-bg active:bg-border-light;
+  }
+
+  .btn-secondary-sm {
+    @apply btn
+           bg-white text-text rounded-btn
+           px-3.5 py-[7px] text-[13px] min-h-[34px]
+           border border-[1.5px] border-border
+           hover:bg-bg;
+  }
+
+  .btn-ghost {
+    @apply btn
+           bg-transparent text-acc
+           px-4 py-2 text-sm rounded-btn
+           hover:bg-acc-light;
+  }
+
+  .btn-danger {
+    @apply btn
+           bg-transparent text-s-err-text
+           px-4 py-2 text-sm rounded-btn
+           border border-[1.5px] border-s-err-border
+           hover:bg-red-50;
+  }
+
+  /* ── Inputs ── */
+  .field-label {
+    @apply block text-[11px] font-semibold uppercase tracking-[0.09em] text-sub mb-1.5;
+  }
+
+  .field {
+    @apply w-full bg-white border border-[1.5px] border-border rounded-btn
+           px-3 py-[9px] text-[14px] text-text placeholder:text-sub2
+           focus:border-acc focus:outline-none transition-colors duration-150;
+  }
+
+  .field-error {
+    @apply text-xs text-s-err-text mt-1;
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-white rounded-card border border-border-light p-5;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-card-hover transition-shadow duration-150 cursor-pointer;
+  }
+
+  /* ── Badges ── */
+  .badge {
+    @apply inline-flex items-center px-[9px] py-0.5 rounded-chip
+           text-[11px] font-semibold border;
+  }
+
+  .badge-green {
+    @apply badge bg-s-ok-bg text-s-ok-text border-s-ok-border;
+  }
+
+  .badge-blue {
+    @apply badge bg-s-info-bg text-s-info-text border-s-info-border;
+  }
+
+  .badge-amber {
+    @apply badge bg-s-warn-bg text-s-warn-text border-s-warn-border;
+  }
+
+  /* ── Chips ── */
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-chip
+           text-[13px] border border-[1.5px] transition-colors cursor-pointer;
+  }
+
+  .chip-active {
+    @apply chip bg-acc text-white border-acc;
+  }
+
+  .chip-inactive {
+    @apply chip bg-white text-sub border-border hover:border-acc-mid;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.09em] text-sub2;
+  }
+}
+
+/* ── Streaming cursor ── */
+.cursor-blink::after {
+  content: "▋";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Brief/Letter body font ── */
+.font-letter {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 15px;
+  line-height: 2;
+}
+
+/* ── Streaming preview ── */
+.streaming-text {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+/* ── Fade mask (bottom of streaming preview) ── */
+.fade-mask-bottom {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}

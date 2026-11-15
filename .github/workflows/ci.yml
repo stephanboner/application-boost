@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Type-check, lint, test & build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      # Test-Key: 64 Hex-Zeichen (deterministisch, NIE in Produktion verwenden)
+      ENCRYPTION_KEY: "0000000000000000000000000000000000000000000000000000000000000000"
+      # Build-time Supabase-Platzhalter, damit `next build` nicht scheitert
+      NEXT_PUBLIC_SUPABASE_URL: "http://127.0.0.1:3201"
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: "test-anon-key"
+      SUPABASE_SERVICE_ROLE_KEY: "test-service-role-key"
+      ANTHROPIC_API_KEY: "test-anthropic-key"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify braces security patch
+        run: npm run check:security-patch
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=moderate
+
+      - name: Type-check
+        run: npm run type-check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests (vitest)
+        run: npm test
+
+      - name: Database migration checks (isolated PostgreSQL)
+        run: npm run check:db
+
+      - name: Build
+        run: npm run build
+
+  e2e:
+    name: E2E-Tests (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # E2E nur ausführen wenn der erste Job (verify) durchläuft.
+    needs: verify
+
+    env:
+      ENCRYPTION_KEY: "0000000000000000000000000000000000000000000000000000000000000000"
+      NEXT_PUBLIC_SUPABASE_URL: "http://127.0.0.1:3201"
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: "test-anon-key"
+      SUPABASE_SERVICE_ROLE_KEY: "test-service-role-key"
+      ANTHROPIC_API_KEY: "test-anthropic-key"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        run: npm run build
+
+      - name: Run Playwright tests
+        run: npm run test:e2e
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

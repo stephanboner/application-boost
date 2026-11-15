@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 376" role="img" aria-labelledby="title description">
+<title id="title">Application Boost, evidence-led AI job application workflow</title>
+<desc id="description">Conceptual overview: CV, vacancy, qualification, draft and edit/export.</desc>
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#143428"/><stop offset="1" stop-color="#071E17"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#02120A" flood-opacity=".28"/></filter></defs>
+<rect width="1200" height="376" rx="18" fill="url(#bg)"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="42" y="46" font-size="12" letter-spacing="3" font-weight="700" fill="#B1DFC2">SOFTWARE ENGINEERING CASE STUDY</text>
+<text x="42" y="103" font-size="47" font-weight="700" fill="#F5F7F1">Application <tspan fill="#A5DDB7">Boost</tspan></text>
+<text x="44" y="136" font-size="16" fill="#C7DACE">Grounded inputs. Structured AI. Human-reviewed output.</text>
+<g filter="url(#s)">
+<rect x="42" y="175" rx="12" width="207" height="139" fill="#F4F8F3"/>
+<rect x="270" y="175" rx="12" width="207" height="139" fill="#F4F8F3"/>
+<rect x="498" y="175" rx="12" width="207" height="139" fill="#CAE7CF"/>
+<rect x="726" y="175" rx="12" width="207" height="139" fill="#F4F8F3"/>
+<rect x="954" y="175" rx="12" width="204" height="139" fill="#F4F8F3"/>
+</g>
+<g fill="#317253" font-size="12" font-weight="700"><text x="58" y="200">01</text><text x="286" y="200">02</text><text x="514" y="200">03</text><text x="742" y="200">04</text><text x="970" y="200">05</text></g>
+<g fill="#173528" font-size="22" font-weight="700"><text x="58" y="243">CV</text><text x="286" y="243">Vacancy</text><text x="514" y="243">Qualify</text><text x="742" y="243">Draft</text><text x="970" y="243">Refine</text></g>
+<g fill="#587465" font-size="13"><text x="58" y="269">Evidence</text><text x="286" y="269">Requirements</text><text x="514" y="269">Match &amp; gaps</text><text x="742" y="269">Streamed letter</text><text x="970" y="269">PDF / DOCX</text></g>
+<g stroke="#D2E2D4" stroke-width="5" stroke-linecap="round"><path d="M58 290h142"/><path d="M286 290h142"/><path d="M742 290h142"/><path d="M970 290h142"/></g>
+<rect x="514" y="286" width="166" height="10" rx="5" fill="#95C5A4"/><rect x="514" y="286" width="103" height="10" rx="5" fill="#347C56"/>
+<text x="42" y="348" font-size="11" letter-spacing="1.2" fill="#95BDA5">CONCEPTUAL WORKFLOW • NOT AN APPLICATION SCREENSHOT</text>
+</g></svg>
