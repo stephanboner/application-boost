@@ -1,0 +1,64 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/playwright-report
+/test-results
+/playwright/.cache
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+*.backup
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets and environment overrides: no real .env file in source control.
+# Explicit examples are safe to version after replacing all values with placeholders.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# vercel
+.vercel
+supabase/.temp/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.claude/
+Bewerbungsboost.zip
+*portfolio-snapshot*.zip
+gitleaks-report.*
+
+
