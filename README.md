@@ -7,6 +7,10 @@
 [![CI](https://github.com/stephanboner/application-boost/actions/workflows/ci.yml/badge.svg)](https://github.com/stephanboner/application-boost/actions/workflows/ci.yml) [![Secret scanning](https://github.com/stephanboner/application-boost/actions/workflows/secret-scan.yml/badge.svg)](https://github.com/stephanboner/application-boost/actions/workflows/secret-scan.yml)
 ![Next.js](https://img.shields.io/badge/Next.js-16-222222) ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-245B3B) ![Status](https://img.shields.io/badge/status-prototype-7B6743)
 
+### Try the live prototype
+
+**[Open BewerbungsBoost ↗](https://bewerbungsboost.stephanboner.ch/)** — explore the application in your browser, from CV import and job analysis to an editable AI-assisted cover letter. **Please use fictional/test data only.** This public-facing prototype is not approved for real personal applicant information or production use.
+
 **Independent software engineering project by Stephan Boner.** The application UI is called *BewerbungsBoost*; *Application Boost* is its portfolio repository. It is a technical proof of concept, **not an operated public service**. Please use fictional test data only.
 
 BewerbungsBoost is a full-stack AI application prototype that helps applicants understand a vacancy, compare it with their experience, and draft a tailored cover letter. It combines structured CV data, job-posting extraction, an AI-assisted fit assessment, and an editable letter workflow.
