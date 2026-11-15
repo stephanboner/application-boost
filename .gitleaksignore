@@ -1,0 +1,4 @@
+# Reviewed Gitleaks false positive in the first clean-history import.
+# A non-secret German budgeting comment was mistaken for an API credential.
+# Suppression is scoped to one commit, file, rule and line only.
+0d6448ffe88a3c72d615e1124ace98a162013594:.env.local.example:generic-api-key:37
