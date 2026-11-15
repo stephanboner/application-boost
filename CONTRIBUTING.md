@@ -1,6 +1,6 @@
 # Contributing
 
-BewerbungsBoost is an experimental project. Contributions should keep the scope small, verifiable and privacy-conscious.
+Application Boost (BewerbungsBoost in the app) is an experimental project. Contributions should keep the scope small, verifiable and privacy-conscious.
 
 ## Local setup
 
@@ -18,7 +18,7 @@ npm run check:security-patch
 npm run build
 ```
 
-When changing a user-facing flow, run the Playwright suite using the local fixtures described in the [technical reference](docs/technical-reference.de.md). When changing dependencies, review `npm audit --omit=dev --audit-level=moderate`.
+When changing a user-facing flow, run the Playwright suite using the local fixtures described in the [local development guide](docs/local-development.md). When changing dependencies, review `npm audit --omit=dev --audit-level=moderate`.
 
 Changes to models or prompts should include tests for response validation, missing evidence, error paths and untrusted external inputs. Do not claim better writing quality without an evaluation on repeatable, synthetic cases.
 
